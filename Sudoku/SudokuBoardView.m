@@ -26,11 +26,17 @@
 }
 
 static const CGFloat margin = 2;
+
 - (void)drawRect:(NSRect)dirtyRect
 {
-
     const CGFloat gridWidth = self.bounds.size.width - 2*margin;
     const CGFloat gridHeight = self.bounds.size.height - 2*margin;
+    
+    if (_selectedRow >= 0 && _selectedCol >= 0){
+        NSRect rect = NSMakeRect(margin + _selectedCol * gridWidth/9, margin+_selectedRow*gridHeight/9, gridWidth/9, gridHeight/9);
+        [[NSColor lightGrayColor] setFill];
+        [NSBezierPath fillRect: rect];
+    }
     
     [[NSColor blackColor] setStroke];
     [NSBezierPath setDefaultLineWidth:2*margin];
@@ -91,6 +97,24 @@ static const CGFloat margin = 2;
     
         }
 
+    }
+}
+
+-(void)mouseDown:(NSEvent *)theEvent {
+    NSPoint windowPoint = [theEvent locationInWindow];
+    NSPoint viewPoint = [self convertPoint:windowPoint fromView:nil];
+    
+    const CGFloat gridWidth = self.bounds.size.width - 2*margin;
+    const CGFloat gridHeight = self.bounds.size.height - 2*margin;
+    
+    const int col = (int) ((viewPoint.x - margin) / gridWidth);
+    const int row = (int) ((viewPoint.y - margin) / gridHeight);
+    
+    if ( 0 <= col < 9 && 0 <= row < 9){
+        if (col != _selectedCol || row != _selectedRow) {
+            _selectedCol = col;
+            _selectedRow = row;
+        }
     }
 }
 
