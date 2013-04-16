@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BoardView.h"
+#import "SudokuBoardView.h"
 
 @interface SudokuController : NSObject
-@property (weak) IBOutlet BoardView *boardView;
+@property (weak) IBOutlet SudokuBoardView *boardView;
 @property (weak) IBOutlet NSMatrix *buttonMatrix;
 - (IBAction)buttonMatrixClick:(id)sender;
 

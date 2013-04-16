@@ -18,7 +18,7 @@
 		E7D81D221717696D00346D0D /* sudoku-expert.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7D81D1E1717696D00346D0D /* sudoku-expert.plist */; };
 		E7D81D231717696D00346D0D /* sudoku-intermediate.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7D81D1F1717696D00346D0D /* sudoku-intermediate.plist */; };
 		E7D81D241717696D00346D0D /* sudoku-simple.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7D81D201717696D00346D0D /* sudoku-simple.plist */; };
-		E7D81D2717176DB200346D0D /* BoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D81D2617176DB200346D0D /* BoardView.m */; };
+		E7D81D2717176DB200346D0D /* SudokuBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D81D2617176DB200346D0D /* SudokuBoardView.m */; };
 		E7D81D2A171773C400346D0D /* SudokuController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D81D29171773C400346D0D /* SudokuController.m */; };
 /* End PBXBuildFile section */
 
@@ -42,8 +42,8 @@
 		E7D81D1E1717696D00346D0D /* sudoku-expert.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sudoku-expert.plist"; sourceTree = "<group>"; };
 		E7D81D1F1717696D00346D0D /* sudoku-intermediate.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sudoku-intermediate.plist"; sourceTree = "<group>"; };
 		E7D81D201717696D00346D0D /* sudoku-simple.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sudoku-simple.plist"; sourceTree = "<group>"; };
-		E7D81D2517176DB200346D0D /* BoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardView.h; sourceTree = "<group>"; };
-		E7D81D2617176DB200346D0D /* BoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardView.m; sourceTree = "<group>"; };
+		E7D81D2517176DB200346D0D /* SudokuBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SudokuBoardView.h; sourceTree = "<group>"; };
+		E7D81D2617176DB200346D0D /* SudokuBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SudokuBoardView.m; sourceTree = "<group>"; };
 		E7D81D28171773C400346D0D /* SudokuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SudokuController.h; sourceTree = "<group>"; };
 		E7D81D29171773C400346D0D /* SudokuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SudokuController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,8 +107,8 @@
 				E7D81D1E1717696D00346D0D /* sudoku-expert.plist */,
 				E7D81D1F1717696D00346D0D /* sudoku-intermediate.plist */,
 				E7D81D201717696D00346D0D /* sudoku-simple.plist */,
-				E7D81D2517176DB200346D0D /* BoardView.h */,
-				E7D81D2617176DB200346D0D /* BoardView.m */,
+				E7D81D2517176DB200346D0D /* SudokuBoardView.h */,
+				E7D81D2617176DB200346D0D /* SudokuBoardView.m */,
 				E7D81D28171773C400346D0D /* SudokuController.h */,
 				E7D81D29171773C400346D0D /* SudokuController.m */,
 				E7D81D121717682900346D0D /* MainMenu.xib */,
@@ -201,7 +201,7 @@
 				E7D81D0A1717682900346D0D /* main.m in Sources */,
 				E7D81D111717682900346D0D /* SudokuAppDelegate.m in Sources */,
 				E7D81D1C1717686D00346D0D /* SudokuBoard.m in Sources */,
-				E7D81D2717176DB200346D0D /* BoardView.m in Sources */,
+				E7D81D2717176DB200346D0D /* SudokuBoardView.m in Sources */,
 				E7D81D2A171773C400346D0D /* SudokuController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +338,7 @@
 				E7D81D191717682900346D0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

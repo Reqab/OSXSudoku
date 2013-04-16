@@ -18,10 +18,15 @@
     NSArray *games = [NSArray arrayWithContentsOfFile:fileName];
     NSString *game = [games objectAtIndex:arc4random() % [games count]];
     [sudokuBoard freshGame:game];
+    
+    [self.boardView setNeedsDisplay:YES];
+    
 }
 
 -(void)awakeFromNib {
     sudokuBoard = [[SudokuBoard alloc] init];
+    self.boardView.board = sudokuBoard;
+    [self loadNewGame];
 }
 
 //tags are set to

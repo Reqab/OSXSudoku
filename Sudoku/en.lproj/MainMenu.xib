@@ -1303,7 +1303,7 @@
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
 				<object class="NSView" key="NSWindowView" id="439893737">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
 						<object class="NSCustomView" id="679231141">
@@ -1313,7 +1313,7 @@
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSNextKeyView" ref="1008572800"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
-							<string key="NSClassName">BoardView</string>
+							<string key="NSClassName">SudokuBoardView</string>
 						</object>
 						<object class="NSMatrix" id="1008572800">
 							<reference key="NSNextResponder" ref="439893737"/>
@@ -1518,7 +1518,6 @@
 						</object>
 					</array>
 					<string key="NSFrameSize">{514, 731}</string>
-					<reference key="NSSuperview"/>
 					<reference key="NSNextKeyView" ref="679231141"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {2560, 1418}}</string>
