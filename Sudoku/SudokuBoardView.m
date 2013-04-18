@@ -107,8 +107,8 @@ static const CGFloat margin = 2;
     const CGFloat gridWidth = self.bounds.size.width - 2*margin;
     const CGFloat gridHeight = self.bounds.size.height - 2*margin;
     
-    const int col = (int) ((viewPoint.x - margin) / gridWidth);
-    const int row = (int) ((viewPoint.y - margin) / gridHeight);
+    const int col = (int) (9*(viewPoint.x - margin) / gridWidth);
+    const int row = (int) (9*(viewPoint.y - margin) / gridHeight);
     
     if ( 0 <= col < 9 && 0 <= row < 9){
         if (col != _selectedCol || row != _selectedRow) {

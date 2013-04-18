@@ -99,19 +99,19 @@
 		E7D81D031717682900346D0D /* Sudoku */ = {
 			isa = PBXGroup;
 			children = (
+				E7D81D121717682900346D0D /* MainMenu.xib */,
 				E7D81D0F1717682900346D0D /* SudokuAppDelegate.h */,
 				E7D81D101717682900346D0D /* SudokuAppDelegate.m */,
 				E7D81D1A1717686D00346D0D /* SudokuBoard.h */,
 				E7D81D1B1717686D00346D0D /* SudokuBoard.m */,
-				E7D81D1D1717696D00346D0D /* sudoku-easy.plist */,
-				E7D81D1E1717696D00346D0D /* sudoku-expert.plist */,
-				E7D81D1F1717696D00346D0D /* sudoku-intermediate.plist */,
-				E7D81D201717696D00346D0D /* sudoku-simple.plist */,
 				E7D81D2517176DB200346D0D /* SudokuBoardView.h */,
 				E7D81D2617176DB200346D0D /* SudokuBoardView.m */,
 				E7D81D28171773C400346D0D /* SudokuController.h */,
 				E7D81D29171773C400346D0D /* SudokuController.m */,
-				E7D81D121717682900346D0D /* MainMenu.xib */,
+				E7D81D1D1717696D00346D0D /* sudoku-easy.plist */,
+				E7D81D1F1717696D00346D0D /* sudoku-intermediate.plist */,
+				E7D81D1E1717696D00346D0D /* sudoku-expert.plist */,
+				E7D81D201717696D00346D0D /* sudoku-simple.plist */,
 				E7D81D041717682900346D0D /* Supporting Files */,
 			);
 			path = Sudoku;
