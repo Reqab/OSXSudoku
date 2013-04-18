@@ -41,7 +41,10 @@
     NSButtonCell *bcell = [sender selectedCell];
     NSLog(@"bcell tag = %d", (int) bcell.tag);
     
-    if(bcell.tag == NEWGAME_BUTTON){
+    if(1 <= bcell.tag && bcell.tag <= 9 && self.boardView.selectedRow >= 0 && self.boardView.selectedCol >= 0){
+        [sudokuBoard setNumber:(int)bcell.tag AtRow:self.boardView.selectedRow Column:self.boardView.selectedCol];
+        [self.boardView setNeedsDisplay:YES];
+    }else if(bcell.tag == NEWGAME_BUTTON){
         [NSApp beginSheet:self.optionWindow modalForWindow:self.mainWindow modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
     }
 }
