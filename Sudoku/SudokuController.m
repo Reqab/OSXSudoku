@@ -13,20 +13,23 @@
     SudokuBoard *sudokuBoard;
 }
 
--(void)loadNewGame {
-    NSString *fileName = [[NSBundle mainBundle] pathForResource:@"sudoku-easy" ofType:@"plist"];
+-(void)loadNewGame:(int)gameLevel {
+    static NSString *levelNames[4] = {@"sudoku-easy",@"sudoku-simple", @"sudoku-intermediate", @"sudoku-expert"};
+    NSString *fileName = [[NSBundle mainBundle] pathForResource:levelNames[gameLevel] ofType:@"plist"];
+    
     NSArray *games = [NSArray arrayWithContentsOfFile:fileName];
     NSString *game = [games objectAtIndex:arc4random() % [games count]];
     [sudokuBoard freshGame:game];
     
     [self.boardView setNeedsDisplay:YES];
-    
+    self.boardView.selectedCol = -1;
+    self.boardView.selectedRow = -1;
 }
 
 -(void)awakeFromNib {
     sudokuBoard = [[SudokuBoard alloc] init];
     self.boardView.board = sudokuBoard;
-    [self loadNewGame];
+    [self loadNewGame:0];
 }
 
 //tags are set to
@@ -36,6 +39,42 @@
 
 - (IBAction)buttonMatrixClick:(id)sender {
     NSButtonCell *bcell = [sender selectedCell];
-    NSLog(@"%d", (int) bcell.tag);
+    NSLog(@"bcell tag = %d", (int) bcell.tag);
+    
+    if(bcell.tag == NEWGAME_BUTTON){
+        [NSApp beginSheet:self.optionWindow modalForWindow:self.mainWindow modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
+    }
+}
+- (IBAction)cancelOptionWindow:(id)sender {
+    NSLog(@"cancelOptionWindow");
+    [NSApp endSheet:self.optionWindow];
+    [self.optionWindow orderOut:sender];
+}
+
+- (IBAction)newGame:(id)sender {
+    [NSApp beginSheet:self.optionWindow modalForWindow:self.mainWindow modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
+}
+
+#define EASY 0
+#define SIMPLE 1
+#define INTERMEDIATE 2
+#define EXPERT 3
+
+- (IBAction)newGameLevel:(id)sender {
+    const int tag = (int)[sender tag];
+    switch(tag){
+        case EASY:
+            [self loadNewGame:EASY];
+            break;
+        case SIMPLE:
+            [self loadNewGame:SIMPLE];
+            break;
+        case INTERMEDIATE:
+            [self loadNewGame:INTERMEDIATE];
+            break;
+        case EXPERT:
+            [self loadNewGame:EXPERT];
+            break;
+    }
 }
 @end

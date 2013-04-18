@@ -110,10 +110,11 @@ static const CGFloat margin = 2;
     const int col = (int) (9*(viewPoint.x - margin) / gridWidth);
     const int row = (int) (9*(viewPoint.y - margin) / gridHeight);
     
-    if ( 0 <= col < 9 && 0 <= row < 9){
+    if ( 0 <= col < 9 && 0 <= row < 9 && ![self.board numberIsFixedAtRow:row Column:col]){
         if (col != _selectedCol || row != _selectedRow) {
             _selectedCol = col;
             _selectedRow = row;
+            [self setNeedsDisplay:YES];
         }
     }
 }

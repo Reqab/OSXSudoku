@@ -13,7 +13,7 @@
 @interface SudokuBoardView : NSView
 
 @property (strong, nonatomic) SudokuBoard *board;
-@property (assign, nonatomic, readonly) int selectedRow;
-@property (assign, nonatomic, readonly) int selectedCol;
+@property (assign, nonatomic) int selectedRow;
+@property (assign, nonatomic) int selectedCol;
 
 @end
