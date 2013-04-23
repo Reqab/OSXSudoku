@@ -37,17 +37,27 @@
 #define PENCIL_BUTTON 11
 #define NEWGAME_BUTTON 12
 
+-(BOOL)inPencilMode{
+    NSButtonCell *bcell = [self.buttonMatrix cellWithTag:PENCIL_BUTTON];
+    return bcell.state == NSOnState;
+}
+
 - (IBAction)buttonMatrixClick:(id)sender {
     NSButtonCell *bcell = [sender selectedCell];
     NSLog(@"bcell tag = %d", (int) bcell.tag);
     
     if(1 <= bcell.tag && bcell.tag <= 9 && self.boardView.selectedRow >= 0 && self.boardView.selectedCol >= 0){
-        [sudokuBoard setNumber:(int)bcell.tag AtRow:self.boardView.selectedRow Column:self.boardView.selectedCol];
-        [self.boardView setNeedsDisplay:YES];
+        if([self inPencilMode]){
+            
+        }else{
+            [sudokuBoard setNumber:(int)bcell.tag AtRow:self.boardView.selectedRow Column:self.boardView.selectedCol];
+            [self.boardView setNeedsDisplay:YES];
+        }
     }else if(bcell.tag == NEWGAME_BUTTON){
         [NSApp beginSheet:self.optionWindow modalForWindow:self.mainWindow modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
     }
 }
+
 - (IBAction)cancelOptionWindow:(id)sender {
     NSLog(@"cancelOptionWindow");
     [NSApp endSheet:self.optionWindow];

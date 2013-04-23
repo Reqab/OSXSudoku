@@ -1322,6 +1322,7 @@
 							<int key="NSvFlags">256</int>
 							<string key="NSFrame">{{20, 20}, {474, 166}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
+							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 							<int key="NSNumRows">2</int>
@@ -1342,7 +1343,7 @@
 									<int key="NSButtonFlags">-2038153216</int>
 									<int key="NSButtonFlags2">134</int>
 									<string key="NSAlternateContents"/>
-									<string key="NSKeyEquivalent"/>
+									<string key="NSKeyEquivalent">1</string>
 									<int key="NSPeriodicDelay">400</int>
 									<int key="NSPeriodicInterval">75</int>
 								</object>
@@ -1356,6 +1357,7 @@
 									<int key="NSButtonFlags">-2038153216</int>
 									<int key="NSButtonFlags2">134</int>
 									<string key="NSAlternateContents"/>
+									<string key="NSKeyEquivalent">2</string>
 									<int key="NSPeriodicDelay">400</int>
 									<int key="NSPeriodicInterval">75</int>
 								</object>
@@ -1369,6 +1371,7 @@
 									<int key="NSButtonFlags">-2038153216</int>
 									<int key="NSButtonFlags2">134</int>
 									<string key="NSAlternateContents"/>
+									<string key="NSKeyEquivalent">3</string>
 									<int key="NSPeriodicDelay">400</int>
 									<int key="NSPeriodicInterval">75</int>
 								</object>
@@ -1382,6 +1385,7 @@
 									<int key="NSButtonFlags">-2038153216</int>
 									<int key="NSButtonFlags2">134</int>
 									<string key="NSAlternateContents"/>
+									<string key="NSKeyEquivalent">4</string>
 									<int key="NSPeriodicDelay">400</int>
 									<int key="NSPeriodicInterval">75</int>
 								</object>
@@ -1395,6 +1399,7 @@
 									<int key="NSButtonFlags">-2038153216</int>
 									<int key="NSButtonFlags2">134</int>
 									<string key="NSAlternateContents"/>
+									<string key="NSKeyEquivalent">5</string>
 									<int key="NSPeriodicDelay">400</int>
 									<int key="NSPeriodicInterval">75</int>
 								</object>
@@ -1408,6 +1413,7 @@
 									<int key="NSButtonFlags">-2038153216</int>
 									<int key="NSButtonFlags2">134</int>
 									<string key="NSAlternateContents"/>
+									<string key="NSKeyEquivalent"></string>
 									<int key="NSPeriodicDelay">400</int>
 									<int key="NSPeriodicInterval">75</int>
 								</object>
@@ -1421,6 +1427,7 @@
 									<int key="NSButtonFlags">-2038153216</int>
 									<int key="NSButtonFlags2">134</int>
 									<string key="NSAlternateContents"/>
+									<string key="NSKeyEquivalent">6</string>
 									<int key="NSPeriodicDelay">400</int>
 									<int key="NSPeriodicInterval">75</int>
 								</object>
@@ -1434,6 +1441,7 @@
 									<int key="NSButtonFlags">-2038153216</int>
 									<int key="NSButtonFlags2">134</int>
 									<string key="NSAlternateContents"/>
+									<string key="NSKeyEquivalent">7</string>
 									<int key="NSPeriodicDelay">400</int>
 									<int key="NSPeriodicInterval">75</int>
 								</object>
@@ -1447,6 +1455,7 @@
 									<int key="NSButtonFlags">-2038153216</int>
 									<int key="NSButtonFlags2">134</int>
 									<string key="NSAlternateContents"/>
+									<string key="NSKeyEquivalent">8</string>
 									<int key="NSPeriodicDelay">400</int>
 									<int key="NSPeriodicInterval">75</int>
 								</object>
@@ -1460,6 +1469,7 @@
 									<int key="NSButtonFlags">-2038153216</int>
 									<int key="NSButtonFlags2">134</int>
 									<string key="NSAlternateContents"/>
+									<string key="NSKeyEquivalent">9</string>
 									<int key="NSPeriodicDelay">400</int>
 									<int key="NSPeriodicInterval">75</int>
 								</object>
@@ -1473,6 +1483,7 @@
 									<int key="NSButtonFlags">-1232846848</int>
 									<int key="NSButtonFlags2">134</int>
 									<string key="NSAlternateContents"/>
+									<string key="NSKeyEquivalent">`</string>
 									<int key="NSPeriodicDelay">400</int>
 									<int key="NSPeriodicInterval">75</int>
 								</object>
@@ -1486,6 +1497,7 @@
 									<int key="NSButtonFlags">-2038153216</int>
 									<int key="NSButtonFlags2">134</int>
 									<string key="NSAlternateContents"/>
+									<string type="base64-UTF8" key="NSKeyEquivalent">Gw</string>
 									<int key="NSPeriodicDelay">400</int>
 									<int key="NSPeriodicInterval">75</int>
 								</object>
@@ -1546,7 +1558,7 @@
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
 				<object class="NSView" key="NSWindowView" id="69097798">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
 						<object class="NSButton" id="515518696">
@@ -1773,7 +1785,6 @@
 						</object>
 					</array>
 					<string key="NSFrameSize">{151, 196}</string>
-					<reference key="NSSuperview"/>
 					<string key="NSReuseIdentifierKey">_NS:20</string>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {2560, 1418}}</string>

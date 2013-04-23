@@ -66,7 +66,7 @@ static const CGFloat margin = 2;
         NSMutableDictionary *textAttributes = [[NSMutableDictionary alloc] init];
         NSFont *font = [NSFont systemFontOfSize:30.0];
         [textAttributes setObject:font forKey:NSFontAttributeName];
-        [textAttributes setObject:[NSColor blackColor] forKey:NSForegroundColorAttributeName];
+        [textAttributes setObject:[NSColor blueColor] forKey:NSForegroundColorAttributeName];
         NSMutableDictionary *fixedTextAttributes = [[NSMutableDictionary alloc] init];
         NSFont *fixedFont = [NSFont boldSystemFontOfSize:30.0];
         [fixedTextAttributes setObject:fixedFont forKey:NSFontAttributeName];
