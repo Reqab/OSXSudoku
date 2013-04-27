@@ -42,19 +42,35 @@
     return bcell.state == NSOnState;
 }
 
+
+
 - (IBAction)buttonMatrixClick:(id)sender {
     NSButtonCell *bcell = [sender selectedCell];
     NSLog(@"bcell tag = %d", (int) bcell.tag);
     
     if(1 <= bcell.tag && bcell.tag <= 9 && self.boardView.selectedRow >= 0 && self.boardView.selectedCol >= 0){
         if([self inPencilMode]){
-            
+            if ([sudokuBoard isSetPencil:(int)bcell.tag AtRow:self.boardView.selectedRow Column:self.boardView.selectedCol]){
+                [sudokuBoard clearPencil:(int)bcell.tag AtRow:self.boardView.selectedRow Column:self.boardView.selectedCol];
+                [self.boardView setNeedsDisplay:YES];
+            }else{
+                [sudokuBoard setPencil:(int)bcell.tag AtRow:self.boardView.selectedRow Column:self.boardView.selectedCol];
+                [self.boardView setNeedsDisplay:YES];
+            }
         }else{
-            [sudokuBoard setNumber:(int)bcell.tag AtRow:self.boardView.selectedRow Column:self.boardView.selectedCol];
-            [self.boardView setNeedsDisplay:YES];
+            if([sudokuBoard numberAtRow:self.boardView.selectedRow Column:self.boardView.selectedCol] == (int)bcell.tag){
+                [sudokuBoard setNumber:0 AtRow:self.boardView.selectedRow Column:self.boardView.selectedCol];
+                [self.boardView setNeedsDisplay:YES];
+            }else{
+                [sudokuBoard setNumber:(int)bcell.tag AtRow:self.boardView.selectedRow Column:self.boardView.selectedCol];
+                [self.boardView setNeedsDisplay:YES];
+            }
         }
     }else if(bcell.tag == NEWGAME_BUTTON){
         [NSApp beginSheet:self.optionWindow modalForWindow:self.mainWindow modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
+    }else if(bcell.tag == DELETE_BUTTON){
+        [sudokuBoard clearAllPencilsAtRow:self.boardView.selectedRow Column:self.boardView.selectedCol];
+        [self.boardView setNeedsDisplay:YES];
     }
 }
 
@@ -89,5 +105,33 @@
             [self loadNewGame:EXPERT];
             break;
     }
+    [NSApp endSheet:self.optionWindow];
+    [self.optionWindow orderOut:sender];
+}
+
+- (IBAction)clear:(id)sender {
+    for (int row = 0; row < 9; row++){
+        for( int col = 0; col < 9; col++){
+            if([sudokuBoard anyPencilsSetAtRow:row Column:col])
+                [sudokuBoard clearAllPencilsAtRow:row Column:col];
+            if([sudokuBoard numberAtRow:row Column:col] != 0 && ![sudokuBoard numberIsFixedAtRow:row Column:col])
+                [sudokuBoard setNumber:0 AtRow:row Column:col];
+            [self.boardView setNeedsDisplay:YES];
+        }
+    }
+    [NSApp endSheet:self.optionWindow];
+    [self.optionWindow orderOut:sender];
+}
+
+- (IBAction)clearConflicts:(id)sender {
+    for (int row = 0; row < 9; row++){
+        for( int col = 0; col < 9; col++){
+            if([sudokuBoard isConflictingEntryAtRow:row Column:col])
+                [sudokuBoard setNumber:0 AtRow:row Column:col];
+            [self.boardView setNeedsDisplay:YES];
+        }
+    }
+    [NSApp endSheet:self.optionWindow];
+    [self.optionWindow orderOut:sender];
 }
 @end

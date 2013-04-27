@@ -18,5 +18,7 @@
 - (IBAction)cancelOptionWindow:(id)sender;
 - (IBAction)newGame:(id)sender;
 - (IBAction)newGameLevel:(id)sender;
+- (IBAction)clear:(id)sender;
+- (IBAction)clearConflicts:(id)sender;
 
 @end

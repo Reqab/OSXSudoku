@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7FCA3015172B3B1B00B0D3ED /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 7FCA3014172B3B1B00B0D3ED /* icon.iconset */; };
 		E7D81CFE1717682900346D0D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7D81CFD1717682900346D0D /* Cocoa.framework */; };
 		E7D81D081717682900346D0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7D81D061717682900346D0D /* InfoPlist.strings */; };
 		E7D81D0A1717682900346D0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D81D091717682900346D0D /* main.m */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7FCA3014172B3B1B00B0D3ED /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = icon.iconset; sourceTree = "<group>"; };
 		E7D81CFA1717682900346D0D /* Sudoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sudoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7D81CFD1717682900346D0D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E7D81D001717682900346D0D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -112,6 +114,7 @@
 				E7D81D1F1717696D00346D0D /* sudoku-intermediate.plist */,
 				E7D81D1E1717696D00346D0D /* sudoku-expert.plist */,
 				E7D81D201717696D00346D0D /* sudoku-simple.plist */,
+				7FCA3014172B3B1B00B0D3ED /* icon.iconset */,
 				E7D81D041717682900346D0D /* Supporting Files */,
 			);
 			path = Sudoku;
@@ -188,6 +191,7 @@
 				E7D81D221717696D00346D0D /* sudoku-expert.plist in Resources */,
 				E7D81D231717696D00346D0D /* sudoku-intermediate.plist in Resources */,
 				E7D81D241717696D00346D0D /* sudoku-simple.plist in Resources */,
+				7FCA3015172B3B1B00B0D3ED /* icon.iconset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

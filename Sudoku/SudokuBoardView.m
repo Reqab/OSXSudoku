@@ -67,10 +67,21 @@ static const CGFloat margin = 2;
         NSFont *font = [NSFont systemFontOfSize:30.0];
         [textAttributes setObject:font forKey:NSFontAttributeName];
         [textAttributes setObject:[NSColor blueColor] forKey:NSForegroundColorAttributeName];
+        
         NSMutableDictionary *fixedTextAttributes = [[NSMutableDictionary alloc] init];
         NSFont *fixedFont = [NSFont boldSystemFontOfSize:30.0];
         [fixedTextAttributes setObject:fixedFont forKey:NSFontAttributeName];
         [fixedTextAttributes setObject:[NSColor blackColor] forKey:NSForegroundColorAttributeName];
+        
+        NSMutableDictionary *pencilTextAttributes = [[NSMutableDictionary alloc] init];
+        NSFont *pencilFont = [NSFont boldSystemFontOfSize:10.0];
+        [pencilTextAttributes setObject:pencilFont forKey:NSFontAttributeName];
+        [pencilTextAttributes setObject:[NSColor darkGrayColor] forKey:NSForegroundColorAttributeName];
+        
+        NSMutableDictionary *confAttributes = [[NSMutableDictionary alloc] init];
+        NSFont *confFont = [NSFont boldSystemFontOfSize:30.0];
+        [confAttributes setObject:confFont forKey:NSFontAttributeName];
+        [confAttributes setObject:[NSColor redColor] forKey:NSForegroundColorAttributeName];
         
         for (int row = 0; row <= 9; row++){
             for( int col = 0; col < 9; col++){
@@ -84,6 +95,8 @@ static const CGFloat margin = 2;
                     NSDictionary *attr;
                     if([self.board numberIsFixedAtRow:row Column:col]){
                         attr = fixedTextAttributes;
+                    }else if([self.board isConflictingEntryAtRow:row Column:col]){
+                        attr = confAttributes;
                     }else {
                         attr = textAttributes;
                     }
@@ -92,6 +105,25 @@ static const CGFloat margin = 2;
                                                  blockRect.origin.y + (blockRect.size.height - textSize.height)/2,
                                                  textSize.width, textSize.height);
                     [text drawInRect:textRect withAttributes:attr];
+                }else if([self.board anyPencilsSetAtRow:row Column:col]){
+                    for (int i = 1; i <= 9; i++) {
+                        if([self.board isSetPencil:i AtRow:row Column:col]){
+                            int pRow = (i-1)/3;
+                            int pCol = (i-1)%3;
+                            NSString *text = [NSString stringWithFormat:@"%d", i];
+                            NSSize textSize = [text sizeWithAttributes:pencilTextAttributes];
+                            blockRect.origin.x = col*gridWidth/9 + margin;
+                            blockRect.origin.y = row*gridHeight/9 + margin;
+                    
+                            NSDictionary *attr;
+                            attr = pencilTextAttributes;
+                        
+                            NSRect textRect = NSMakeRect(blockRect.origin.x + (2*pCol+1)*(blockRect.size.width)/7,
+                                                        blockRect.origin.y + (2*pRow+1)*(blockRect.size.height)/7,
+                                                        textSize.width, textSize.height);
+                            [text drawInRect:textRect withAttributes:attr];
+                        }
+                    }
                 }
             }
     
